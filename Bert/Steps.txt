@@ -1,0 +1,5 @@
+1. data_preprocessing.py  generate text.csv for Bert testing
+
+2. run_bert.py generate all_output.csv, which includes the text features outputed from Bert
+
+3. main_tcn.py training the generated all_ouput.csv to see the performance.

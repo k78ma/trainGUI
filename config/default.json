@@ -1,0 +1,8 @@
+{
+	"epochs": "5",
+	"lr": "0.001", 
+	"batch": "8",
+	"val_ratio": "0.32", 
+	"start_year": "2015", 
+	"end_year": "2018"
+}

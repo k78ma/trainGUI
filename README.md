@@ -7,7 +7,7 @@
 - XGBoost 1.6.2
 - Transformers 4.23.1
 <br>
-For a full list of requirements, see [requirements.txt](/requirements.txt)
+For a full list of requirements, see [requirements.txt](https://github.com/k78ma/trainGUI/blob/main/requirements.txt)
 
 ### Usage (Terminal)
 1. Create a conda environment named `gui` with the required packages above.

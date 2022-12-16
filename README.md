@@ -32,6 +32,7 @@ For a full list of requirements, see [requirements.txt](https://github.com/k78ma
 ![Progress Bar](https://user-images.githubusercontent.com/77073162/208041536-9b932eb4-a284-46f8-b933-7867b94db08a.png) &nbsp;	&nbsp;	&nbsp;	![Pop-up](https://user-images.githubusercontent.com/77073162/208041943-b6cdd719-e53d-412f-acca-b37f1ec4eb3e.png)
 ---
 - After training, loss, FP rate, and FN rate plots are available in their respective tabs. An example loss graph is shown below. 
-- The plots support panning, zooming, saving, and custom configuration, all done through the bottom toolbar. <br> <br>
+- The plots support panning, zooming, saving, and custom configuration, all done through the bottom toolbar. 
+- Hovering over a given plot point with your mouse will show coordinates in the bottom right, allowing you to view exact models. <br> <br>
 ![Loss plot](https://user-images.githubusercontent.com/77073162/208042230-7a5ac3b1-d493-43e6-aff6-9539bcea29b6.png)
 

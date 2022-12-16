@@ -10,7 +10,7 @@
 For a full list of requirements, see [requirements.txt](requirements.txt)
 
 ### Usage (Terminal)
-Create a conda environment named `gui` with the required packages above.
-Activate the environment using `conda gui`.
-Switch to the correct directory with `cd trainGUI`.
-Run the GUI using `python gui.py`.
+1. Create a conda environment named `gui` with the required packages above.
+2. Activate the environment using `conda gui`.
+3. Switch to the correct directory with `cd trainGUI`.
+4. Run the GUI using `python gui.py`.

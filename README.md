@@ -6,4 +6,4 @@
 - PyTorch 1.8.0
 - XGBoost 1.6.2
 - Transformers 4.23.1
-For a full list of requirements, see [requirements.txt]
+For a full list of requirements, see [requirements.txt](requirements.txt)

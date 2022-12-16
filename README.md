@@ -16,3 +16,6 @@ For a full list of requirements, see [requirements.txt](https://github.com/k78ma
 4. Run the GUI using `python gui.py`.
 
 ### Usage of GUI
+- Set session name, training data, and output directory on the "Main" tab.
+- Help and quit buttons are available at the bottom.
+![Main Page](https://user-images.githubusercontent.com/77073162/208039476-fa9da6cc-8260-43f8-af8f-236fdea8ab2b.png)

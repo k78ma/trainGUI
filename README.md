@@ -9,8 +9,10 @@
 <br>
 For a full list of requirements, see [requirements.txt](https://github.com/k78ma/trainGUI/blob/main/requirements.txt)
 
-### Usage (Terminal)
+### Starting the GUI through terminal
 1. Create a conda environment named `gui` with the required packages above.
 2. Activate the environment using `conda gui`.
 3. Switch to the correct directory with `cd trainGUI`.
 4. Run the GUI using `python gui.py`.
+
+### Usage of GUI

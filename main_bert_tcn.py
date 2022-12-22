@@ -30,7 +30,7 @@ def NRC_Revenue_Prediction_Training (load_path,test_ratio,load,epochs,data_path,
     parser = argparse.ArgumentParser(description='deep regression model')
 
     # ************************************** Environment Setting *****************************************
-    parser.add_argument('--output_path', default=os.path.join(os.path.expanduser('~'), 'results'),
+    parser.add_argument('--output_path', default=os.path.join(os.path.expanduser('~'), str(root.outdirInputBox.get())),
                         help='output path for files produced by the agent')
 
     # parser.add_argument('--load_path', default=r".\TCN\saved_model\weight.pth",
@@ -92,7 +92,7 @@ def NRC_Revenue_Prediction_Training (load_path,test_ratio,load,epochs,data_path,
     # parser.add_argument('-u', '--useless_labels', nargs='*', help='useless labels list',
     #                     default="id CityName docid NoteType ProjectNo NoteGroupType Revenue2018 Revenue2009 Revenue2010")
     parser.add_argument('-u', '--useless_labels', nargs='*', help='useless labels list',
-                        default="CAAmt ProjectNo IncorporationYear AnimalEthicsProject Employee2000 Employee2001 Employee2002 Employee2003 Employee2004 Employee2005 Employee2006 Employee2007 Employee2008 Employee2009 Employee2010 Employee2011 Employee2012 Employee2013 Employee2014 Employee2015 Employee2016 Employee2017 Employee2018 Employee2019 Employee2020 Employee2021 Employee2022 EmployeeGrowthPct2000 EmployeeGrowthPct2001 EmployeeGrowthPct2002 EmployeeGrowthPct2003 EmployeeGrowthPct2004 EmployeeGrowthPct2005 EmployeeGrowthPct2006 EmployeeGrowthPct2007 EmployeeGrowthPct2008 EmployeeGrowthPct2009 EmployeeGrowthPct2010 EmployeeGrowthPct2011 EmployeeGrowthPct2012 EmployeeGrowthPct2013 EmployeeGrowthPct2014 EmployeeGrowthPct2015 EmployeeGrowthPct2016 EmployeeGrowthPct2017 EmployeeGrowthPct2018 EmployeeGrowthPct2019 EmployeeGrowthPct2020 EmployeeGrowthPct2021 EmployeeGrowthPct2022 HumanEthicsProject InternationalProject OrgID OrgName OrganizationID ProjectCompleteDate ProjectType")
+                        default="CAAmt IncorporationYear AnimalEthicsProject Employee2000 Employee2001 Employee2002 Employee2003 Employee2004 Employee2005 Employee2006 Employee2007 Employee2008 Employee2009 Employee2010 Employee2011 Employee2012 Employee2013 Employee2014 Employee2015 Employee2016 Employee2017 Employee2018 Employee2019 Employee2020 Employee2021 Employee2022 EmployeeGrowthPct2000 EmployeeGrowthPct2001 EmployeeGrowthPct2002 EmployeeGrowthPct2003 EmployeeGrowthPct2004 EmployeeGrowthPct2005 EmployeeGrowthPct2006 EmployeeGrowthPct2007 EmployeeGrowthPct2008 EmployeeGrowthPct2009 EmployeeGrowthPct2010 EmployeeGrowthPct2011 EmployeeGrowthPct2012 EmployeeGrowthPct2013 EmployeeGrowthPct2014 EmployeeGrowthPct2015 EmployeeGrowthPct2016 EmployeeGrowthPct2017 EmployeeGrowthPct2018 EmployeeGrowthPct2019 EmployeeGrowthPct2020 EmployeeGrowthPct2021 EmployeeGrowthPct2022 HumanEthicsProject InternationalProject OrgID OrgName OrganizationID ProjectCompleteDate ProjectType")
     # Province FinancialMonitoringRating CAAmt IncorporationYear
     # Revenue2017
     # Revenue2016
@@ -157,7 +157,7 @@ def NRC_Revenue_Prediction_Training (load_path,test_ratio,load,epochs,data_path,
     logger.info("=" * len(header))
 
     if torch.cuda.is_available():
-        device = torch.device('cuda')
+        device = torch.device("cuda")
         print('cuda')
     else:
         device = torch.device("cpu")
@@ -186,7 +186,7 @@ def NRC_Revenue_Prediction_Training (load_path,test_ratio,load,epochs,data_path,
 
     logger.info("Dataset has been extraced and preprocessed")
 
-    tcn_input_size = data_processed.original_input_size + args.bert_output
+    tcn_input_size = data_processed.original_input_size + args.bert_output*2
     # print(args.bert_output)
 
     original_input_size = data_processed.original_input_size
@@ -199,7 +199,7 @@ def NRC_Revenue_Prediction_Training (load_path,test_ratio,load,epochs,data_path,
 
 
     model = TCN(original_input_size, input_ids_size, input_mask_size, segment_ids_size, tcn_input_size, args.bert_output, 1, num_chans, dropout=args.dropout, kernel_size=args.k_size)
-    model = model.cuda()
+    model = model.to(device)
 
     if (load):
         print('using pretrained model...')
@@ -211,4 +211,4 @@ def NRC_Revenue_Prediction_Training (load_path,test_ratio,load,epochs,data_path,
     # logger.info("Training has started")
     trainer = TCNTrainer(trainloader=train_loader, test_loader=test_loader, model=model, optimizer=optimizer,
                          criterion=criterian, device=device,load_path=load_path,output_size=output_size)
-    trainer.run(epochs, load, root)
+    trainer.run(epochs,load, root)

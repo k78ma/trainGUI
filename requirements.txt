@@ -1,7 +1,6 @@
 _libgcc_mutex             0.1                        main
 _openmp_mutex             5.1                       1_gnu
 addict                    2.4.0                    pypi_0    pypi
-albumentations            1.2.1                    pypi_0    pypi
 blas                      1.0                         mkl
 bzip2                     1.0.8                h7f98852_4    conda-forge
 ca-certificates           2022.07.19           h06a4308_0
@@ -45,8 +44,6 @@ mkl                       2021.4.0           h06a4308_640
 mkl-service               2.4.0            py37h402132d_0    conda-forge
 mkl_fft                   1.3.1            py37h3e078e5_1    conda-forge
 mkl_random                1.2.2            py37h219a48f_0    conda-forge
-mmcv-full                 1.5.0                    pypi_0    pypi
-mmdet                     2.25.2                   pypi_0    pypi
 model-index               0.1.11                   pypi_0    pypi
 ncurses                   6.3                  h5eee18b_3
 nettle                    3.6                  he412f7d_0    conda-forge
@@ -63,7 +60,6 @@ openssl                   1.1.1q               h7f8727e_0
 ordered-set               4.1.0                    pypi_0    pypi
 packaging                 21.3                     pypi_0    pypi
 pandas                    1.3.5                    pypi_0    pypi
-panopticapi               0.1                      pypi_0    pypi
 pillow                    9.2.0                    pypi_0    pypi
 pip                       22.2.2                   pypi_0    pypi
 pycocotools               2.0.4                    pypi_0    pypi
@@ -86,7 +82,6 @@ scikit-image              0.19.3                   pypi_0    pypi
 scikit-learn              1.0.2                    pypi_0    pypi
 scipy                     1.7.3                    pypi_0    pypi
 setuptools                63.4.1           py37h06a4308_0
-shapely                   1.8.4                    pypi_0    pypi
 six                       1.16.0             pyh6c4a22f_0    conda-forge
 sqlite                    3.39.2               h5082296_0
 tabulate                  0.8.10                   pypi_0    pypi
